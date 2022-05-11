@@ -10,7 +10,9 @@ RUN apt-get update \
     python3-numpy \
     python3-pil \
     python3-pip \
-    python-dev
+    python-dev \
+    cmake \
+    qt4-default
 
 # do all the installation in /tmp directory
 WORKDIR /tmp
@@ -38,6 +40,7 @@ RUN rm -f /tmp/*.deb \
    && apt-get clean \ 
    && rm -rf /var/lib/apt/lists/*
 
+RUN git clone https://github.com/RPi-Distro/RTIMULib.git && cd RTIMULib/Linux/ && mkdir build && cd build && cmake .. && make
 
 COPY . /app
 WORKDIR /app
