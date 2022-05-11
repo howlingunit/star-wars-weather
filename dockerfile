@@ -9,7 +9,8 @@ RUN apt-get update \
     curl \
     python3-numpy \
     python3-pil \
-    python3-pip
+    python3-pip \
+    python-dev
 
 # do all the installation in /tmp directory
 WORKDIR /tmp
@@ -45,5 +46,5 @@ WORKDIR /app
 # RUN pip3 install Flask 
 RUN pip3 install -r requirements.txt 
 EXPOSE 80
-ENTRYPOINT [ "python" ] 
+ENTRYPOINT [ "python3" ] 
 CMD [ "ReportSite.py" ]
