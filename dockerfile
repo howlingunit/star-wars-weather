@@ -7,7 +7,8 @@ RUN apt-get update \
     ca-certificates \
     curl \
     python3-numpy \
-    python3-pil
+    python3-pil \
+    python3-pip
 
 # do all the installation in /tmp directory
 WORKDIR /tmp
