@@ -46,4 +46,4 @@ RUN pip3 install Flask
 # RUN pip3 install -r requirements.txt 
 EXPOSE 80
 ENTRYPOINT [ "python" ] 
-CMD [ "app.py" ]
+CMD [ "ReportSite.py" ]
