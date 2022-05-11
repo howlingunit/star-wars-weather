@@ -1,4 +1,4 @@
-FROM python:alpine3.7 
+FROM python:buster
 COPY . /app
 WORKDIR /app
 RUN apt update && apt get sense-hat && reboot now
