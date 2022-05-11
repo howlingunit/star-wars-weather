@@ -1,5 +1,5 @@
 # FROM arm32v7/debian:jessie-slim 
-FROM python:debian:jessie-slim 
+FROM python:buster
 
 # most of this docker file is from https://github.com/protik77/python3-sensehat
 
