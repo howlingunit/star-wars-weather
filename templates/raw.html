@@ -1,0 +1,32 @@
+{%extends "layout.html"%}
+
+{%block script%}
+    <script>
+        function round(){
+            var DP = document.getElementById("roundNum").value;
+            console.log(DP)
+            var press = parseFloat({{P}})
+            var temp = parseFloat({{T}})
+            var humid = parseFloat({{H}})
+            press = press.toFixed(DP);
+            temp = temp.toFixed(DP);
+            humid = humid.toFixed(DP);
+            document.getElementById("Press").innerHTML = "Press:"+press;
+            document.getElementById("Temp").innerHTML = "Temp:"+temp;
+            document.getElementById("Humid").innerHTML = "Humid:"+humid;
+
+        }
+    </script>
+{%endblock script%}
+
+{%block content%}
+    <p>This is all the data being recorded by the raspberry pi</p>
+    <p id="Press">Press:{{P}}</p>
+    <p id="Temp">Temp:{{T}}</p>
+    <p id="Humid">Humid:{{H}}</p>
+    <form onsubmit="round()">
+        <label for="roundNum" style="color: white;">num of Decimal Places</label><br>
+        <input type="number" id="roundNum" value="2"><br>
+        <input type="button" onclick="round()" value="submit">
+    </form>
+{%endblock content%}
