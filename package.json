@@ -1,0 +1,28 @@
+{
+  "name": "star-wars-weather",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "a star wars weather app",
+  "main": "svr.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node svr.js",
+    "start": "node svr.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howlingunit/star-wars-weather.git"
+  },
+  "author": "Tyler Pitt",
+  "license": "Apache License",
+  "bugs": {
+    "url": "https://github.com/howlingunit/star-wars-weather/issues"
+  },
+  "homepage": "https://github.com/howlingunit/star-wars-weather#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
