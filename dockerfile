@@ -15,7 +15,7 @@ RUN apt-get update \
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN echo "deb https://deb.nodesource.com/node_6.x jessie main" > /etc/apt/sources.list.d/nodesource.list
 RUN echo "deb-src https://deb.nodesource.com/node_6.x jessie main" >> /etc/apt/sources.list.d/nodesource.list
-RUN apt update && apt install nodejs
+RUN apt update && apt install -y nodejs
 
 # do all the installation in /tmp directory
 WORKDIR /tmp
