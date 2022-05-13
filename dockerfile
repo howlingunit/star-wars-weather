@@ -11,7 +11,7 @@ RUN apt-get update \
     python3-numpy \
     python3-pil
 
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | -E bash - && apt-get install -y nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs
 
 # do all the installation in /tmp directory
 WORKDIR /tmp
