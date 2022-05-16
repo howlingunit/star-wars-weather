@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Star Wars Weather</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <svg viewBox="0 0 100 80" width="40" height="40" class="burgerButton">
+                <rect width="100" height="20" rx="8"></rect>
+                <rect y="30" width="100" height="20" rx="8"></rect>
+                <rect y="60" width="100" height="20" rx="8"></rect>
+            </svg>
+            <div class="navOptions close">
+                <ul>
+                    <li><a href="./index.html"><button class="navButton">SWW</button></a></li>
+                    <li><a href="http://tyway.net"><button class="navButton">TYWAY</button></a></li>
+                    <li><a href="https://github.com/howlingunit/star-wars-weather"><button class="navButton">GITHUB</button></a></li>
+                    <li><a href="./raw.html"><button class="navButton">RAW DATA</button></a></li>
+                </ul>
+                <div class="navExit"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <p class="weatherP"></p>
+    </main>
+
+    <script src="./lib/nav.js"></script>
+    <script src="./lib/SWW.js"></script>
+</body>
+</html>
