@@ -21,7 +21,7 @@ function changeBG(planet, temp) {
   // const body = document.querySelector('body');
   const weatherP = document.querySelector('.weatherP');
 
-  weatherP.textContent = `Woah, it's ${temp} degrees. It's like ${planet} out there.`
+  weatherP.textContent = `Woah, it's ${temp.toPrecision(3)} degrees. It's like ${planet} out there.`
   document.body.style.backgroundImage = `url('./assets/${planet.toLowerCase()}.jpg')`;
 }
 
