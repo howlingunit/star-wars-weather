@@ -1,16 +1,22 @@
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
 async function SWW(){
   const planets = ["Hoth", "Naboo", "Tatooine"]
-  let senseData = await fetch('/sense-data');
-  senseData = await senseData.json();
+  while (true){
+    let senseData = await fetch('/sense-data');
+    senseData = await senseData.json();
 
-  if (senseData.temp <= 10){
-    changeBG(planets[0], senseData.temp);
-  }
-  if (senseData.temp > 10){
-    changeBG(planets[1], senseData.temp);
-  }
-  if (senseData.temp > 25){
-    changeBG(planets[2], senseData.temp);
+    if (senseData.temp <= 10){
+      changeBG(planets[0], senseData.temp);
+    }
+    if (senseData.temp > 10){
+      changeBG(planets[1], senseData.temp);
+    }
+    if (senseData.temp > 25){
+      changeBG(planets[2], senseData.temp);
+    }
   }
 
 
