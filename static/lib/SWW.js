@@ -1,5 +1,5 @@
 async function SWW(){
-  const planets = ["Hoth", "Naboo", "tatooine"]
+  const planets = ["Hoth", "Naboo", "Tatooine"]
   let senseData = await fetch('/sense-data');
   senseData = await senseData.json();
 
@@ -18,10 +18,11 @@ async function SWW(){
 }
 
 function changeBG(planet, temp) {
-  const body = document.querySelector('body');
+  // const body = document.querySelector('body');
   const weatherP = document.querySelector('.weatherP');
 
   weatherP.textContent = `Woah, it's ${temp} degrees. It's like ${planet} out there.`
+  document.body.style.backgroundImage = `url('./assets/${planet.toLowerCase()}.jpg')`;
 }
 
 SWW();
