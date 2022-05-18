@@ -1,32 +1,34 @@
-{%extends "layout.html"%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star wars weather - raw data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <svg viewBox="0 0 100 80" width="40" height="40" class="burgerButton">
+                <rect width="100" height="20" rx="8"></rect>
+                <rect y="30" width="100" height="20" rx="8"></rect>
+                <rect y="60" width="100" height="20" rx="8"></rect>
+            </svg>
+            <div class="navOptions close">
+                <ul>
+                    <li><a href="./index.html"><button class="navButton">SWW</button></a></li>
+                    <li><a href="http://tyway.net"><button class="navButton">TYWAY</button></a></li>
+                    <li><a href="https://github.com/howlingunit/star-wars-weather"><button class="navButton">GITHUB</button></a></li>
+                    <li><a href="./raw.html"><button class="navButton">RAW DATA</button></a></li>
+                </ul>
+                <div class="navExit"></div>
+            </div>
+        </nav>
+    </header>
 
-{%block script%}
-    <script>
-        function round(){
-            var DP = document.getElementById("roundNum").value;
-            console.log(DP)
-            var press = parseFloat({{P}})
-            var temp = parseFloat({{T}})
-            var humid = parseFloat({{H}})
-            press = press.toFixed(DP);
-            temp = temp.toFixed(DP);
-            humid = humid.toFixed(DP);
-            document.getElementById("Press").innerHTML = "Press:"+press;
-            document.getElementById("Temp").innerHTML = "Temp:"+temp;
-            document.getElementById("Humid").innerHTML = "Humid:"+humid;
+    <h1>Not here yet</h1>
 
-        }
-    </script>
-{%endblock script%}
-
-{%block content%}
-    <p>This is all the data being recorded by the raspberry pi</p>
-    <p id="Press">Press:{{P}}</p>
-    <p id="Temp">Temp:{{T}}</p>
-    <p id="Humid">Humid:{{H}}</p>
-    <form onsubmit="round()">
-        <label for="roundNum" style="color: white;">num of Decimal Places</label><br>
-        <input type="number" id="roundNum" value="2"><br>
-        <input type="button" onclick="round()" value="submit">
-    </form>
-{%endblock content%}
+    <script src="./lib/nav.js"></script>
+</body>
+</html>
