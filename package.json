@@ -10,7 +10,6 @@
   "scripts": {
     "test": "node svr.js",
     "start": "node svr.js"
-
   },
   "repository": {
     "type": "git",
@@ -23,6 +22,8 @@
   },
   "homepage": "https://github.com/howlingunit/star-wars-weather#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "sqlite": "^4.1.2",
+    "sqlite3": "^5.1.1"
   }
 }

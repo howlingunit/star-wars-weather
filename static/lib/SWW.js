@@ -17,7 +17,6 @@ async function SWW(){
     if (senseData.temp > 25){
       changeBG(planets[2], senseData.temp);
     }
-    await sleep(5000)
   }
 
 
