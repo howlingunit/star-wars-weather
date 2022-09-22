@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "node svr.js",
-    "start": "node svr.js"
+    "start": "./wrapper_script.sh"
   },
   "repository": {
     "type": "git",
