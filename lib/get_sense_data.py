@@ -21,7 +21,6 @@ def getinfo():
     # T = random.uniform(0.2, 30)
     # H = random.uniform(0.2, 30)
 
-    id = 'hi'
 
     c.execute("INSERT INTO data(id, date, temp, humid, press) VALUES ('{}', '{}', '{}', '{}', '{}')".format(str(uuid.uuid4()), time.time_ns(), T, H, P))
     conn.commit()

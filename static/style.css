@@ -103,3 +103,15 @@ main {
     text-align: center;
     /* color: white; */
 }
+
+.time {
+    font-family: 'Odibee Sans', cursive;
+
+    position: absolute;
+
+    z-index: -1;
+    top: -3rem;
+    right: 0;
+
+    margin: 0.5rem;
+}
