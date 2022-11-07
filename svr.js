@@ -5,6 +5,10 @@ const app = express();
 
 app.use(express.static('static'));
 
-app.get('/sense-data', api.senseData);
+app.get('/latest-temp', api.latestTemp);
+
+app.get('/all-data', api.all);
+
+app.get('/avg-temp', api.avgTemp)
 
 app.listen(8080);

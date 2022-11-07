@@ -1,6 +1,6 @@
 async function SWW(){
   const planets = ["Hoth", "Naboo", "Tatooine"]
-  let senseData = await fetch('/sense-data');
+  let senseData = await fetch('/latest-temp');
   senseData = await senseData.json();
 
   if (senseData.temp <= 10){
