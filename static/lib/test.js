@@ -1,16 +1,24 @@
 const out = document.querySelector('#avg-temp')
 
-let data = await fetch('/all-data')
+let data = await fetch('/week-avg')
 data = await data.json()
 
+const ctx = document.getElementById('myChart');
 
-let avg = 0
-
-
-for (let i = 0; i < data.length; i++){
-  avg += data[i].temp
-}
-
-avg = avg/data.length
-
-out.textContent = avg.toString()
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    // labels: Object.keys(data),
+    datasets: [{
+      label: 'average temps',
+      data: data,
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});

@@ -9,6 +9,8 @@ app.get('/latest-temp', api.latestTemp);
 
 app.get('/all-data', api.all);
 
+app.get('/current-data', api.currentData);
+
 app.get('/avg-temp', api.avgTemp);
 
 app.get('/week-avg', api.weekAvg);
