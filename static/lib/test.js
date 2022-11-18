@@ -1,7 +1,7 @@
-const out = document.querySelector('#avg-temp')
+const out = document.querySelector('#avg-temp');
 
-let data = await fetch('/week-avg')
-data = await data.json()
+let data = await fetch('/week-avg');
+data = await data.json();
 
 const ctx = document.getElementById('myChart');
 

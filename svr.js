@@ -5,9 +5,9 @@ const app = express();
 
 app.use(express.static('static'));
 
-app.get('/latest-temp', api.latestTemp);
-
 app.get('/all-data', api.all);
+
+app.get('/latest-temp', api.latestTemp);
 
 app.get('/current-data', api.currentData);
 
