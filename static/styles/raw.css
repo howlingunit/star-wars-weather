@@ -1,0 +1,56 @@
+:root {
+    --current-data-h1: 3rem;
+}
+
+@media (max-width: 600px) {
+    :root{
+        --current-data-h1: 2.5rem;
+    }
+}
+
+body {
+    background-color: #252525;
+    color: #fff;
+
+    align-items: center;
+    width: 100vw;
+    height: auto;
+}
+
+.burgerButton {
+    fill: #fff;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-color: #1E1E1E;
+    margin: 1rem 2rem 0rem 2rem;
+    padding: 1rem 2rem 1rem 2rem;
+    width: auto;
+    
+}
+
+#current-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+#current-data>h1 {
+    font-family: 'Odibee Sans', cursive;
+    font-size: var(--current-data-h1);
+}
+#current-data>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    width: 100%;
+    margin-top: 1rem;
+}

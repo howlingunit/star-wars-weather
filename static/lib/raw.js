@@ -1,15 +1,15 @@
 import {DataElem} from './custom_elements/dataelem.js'
 
 async function init(){
-    let currentData = await fetch('/current-data');
+    let currentData = await fetch('/current-data'); //collect data
     currentData = await currentData.json();
-    const titleElem = document.querySelector('#current-data-title');
 
+    const timeElem = document.querySelector('#current-data-time'); // put time on page
+    timeElem.textContent = new Date(currentData.date / 1000000).toLocaleString()
 
-    titleElem.textContent = `The current data colected at ${new Date(currentData.date / 1000000).toLocaleString()}`;
-    const currentDataElem = document.querySelector('#current-data');
-
-    const dataTypes = ['temp', 'humid', 'press']
+    const currentDataElem = document.querySelector('#current-data'); // put data on page
+    const dataDiv = document.createElement('div')
+    const dataTypes = ['temp', 'humid', 'press'];
     for (const i of dataTypes){
         const data = currentData[i];
 
@@ -17,9 +17,10 @@ async function init(){
         dataElem.setAttribute('title', i);
         dataElem.setAttribute('data', data);
 
-        currentDataElem.appendChild(dataElem);
+        dataDiv.appendChild(dataElem);
 
     }
+    currentDataElem.appendChild(dataDiv)
 
 }
 
