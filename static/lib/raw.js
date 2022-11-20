@@ -1,4 +1,31 @@
+// eslint-disable-next-line no-unused-vars
 import { DataElem } from './custom_elements/dataelem.js';
+
+async function addPerWeekChart() {
+  let data = await fetch('/week-avg');
+  data = await data.json();
+
+  const ctx = document.getElementById('per-week-chart');
+
+  // eslint-disable-next-line no-new, no-undef
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      // labels: Object.keys(data),
+      datasets: [{
+        label: 'average temps',
+        data,
+      }],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+}
 
 async function init() {
   let currentData = await fetch('/current-data'); // collect data
@@ -20,6 +47,8 @@ async function init() {
     dataDiv.appendChild(dataElem);
   }
   currentDataElem.appendChild(dataDiv);
+
+  addPerWeekChart();
 }
 
 init();
