@@ -17,13 +17,6 @@ async function addPerWeekChart() {
         data,
       }],
     },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
   });
 }
 

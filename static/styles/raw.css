@@ -1,10 +1,22 @@
 :root {
     --current-data-h1: 3rem;
+
+    --main-padding: 5rem 4rem 1rem 4rem;
+    --main-margin: 1rem 2rem 0rem 2rem;
+
+    --per-week-padding: 0 20% 0 20%;
 }
 
 @media (max-width: 600px) {
     :root{
         --current-data-h1: 2.5rem;
+
+        --main-padding: 2rem 0.5rem 1rem 0.5rem;
+        --main-margin: 1rem 0.5rem 0rem 0.5rem;
+
+        --per-week-padding: 0;
+
+
     }
 }
 
@@ -22,15 +34,16 @@ body {
 }
 
 main {
-    height: 100%;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
     background-color: #1E1E1E;
-    margin: 1rem 2rem 0rem 2rem;
-    padding: 1rem 2rem 1rem 2rem;
-    width: auto;
+    margin: var(--main-margin);
+    padding: var(--main-padding);
+    width: auto;    
     
 }
 
@@ -55,4 +68,13 @@ section>h1 {
 
     width: 100%;
     margin-top: 1rem;
+}
+
+#per-week {
+    padding: var(--per-week-padding);
+
+}
+
+#per-week-chart {
+    margin-top: 2rem;
 }
