@@ -32,3 +32,9 @@ while True:
     getinfo()
     print('done')
     time.sleep(1800)
+
+
+#get test data
+# for i in range(20000):
+#     getinfo()
+#     print(i)

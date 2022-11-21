@@ -12,13 +12,25 @@
     border: 0;
 }
 
+::-webkit-scrollbar {
+    display: none; 
+}
+
 :root {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     --navOptions-gridColumns: 1fr 4fr;
+
+    --data-elem-h2-font-size: 2rem;
+    --data-elem-p-font-size: 2.5rem;
 }
 
 @media (max-width: 500px) {
     :root{
         --navOptions-gridColumns: 1fr 1fr; 
+
+        --data-elem-h2-font-size: 2rem;
+        --data-elem-p-font-size: 1.7rem;
     }
 }
 
@@ -26,7 +38,6 @@ body {
     width: 100vw;
     height: 100vh;
 
-    /* background-image: url("./assets/tatooine.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -35,7 +46,6 @@ body {
 nav {
     width: 100vw;
     height: 7vh;
-
 }
 
 .burgerButton {
