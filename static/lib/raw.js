@@ -5,6 +5,21 @@ async function addPerWeekChart() {
   let data = await fetch('/week-avg');
   data = await data.json();
 
+  // flip the obj
+
+  const flippedData = [];
+
+  for (const key in data){
+    flippedData.push({
+      x: key,
+      y: data[key]
+    });
+
+  }
+
+  flippedData.reverse()
+  console.log(flippedData);
+
   const ctx = document.getElementById('per-week-chart');
 
   // eslint-disable-next-line no-new, no-undef
@@ -14,7 +29,7 @@ async function addPerWeekChart() {
       // labels: Object.keys(data),
       datasets: [{
         label: 'average temps',
-        data,
+        data: flippedData,
       }],
     },
   });
