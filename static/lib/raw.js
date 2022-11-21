@@ -35,7 +35,7 @@ async function addPerWeekChart() {
   });
 }
 
-async function init() {
+async function addCurrentData(){
   let currentData = await fetch('/current-data'); // collect data
   currentData = await currentData.json();
 
@@ -44,18 +44,27 @@ async function init() {
 
   const currentDataElem = document.querySelector('#current-data'); // put data on page
   const dataDiv = document.createElement('div');
-  const dataTypes = ['temp', 'humid', 'press'];
-  for (const i of dataTypes) {
+
+  const dataTypes = {
+    temp : 'Temperature',
+    humid : 'Humidity',
+    press : 'Pressure',
+  };
+  
+  for (const i of Object.keys(dataTypes)) {
     const data = currentData[i];
 
     const dataElem = document.createElement('data-elem');
-    dataElem.setAttribute('title', i);
+    dataElem.setAttribute('title', dataTypes[i]);
     dataElem.setAttribute('data', data);
 
     dataDiv.appendChild(dataElem);
   }
   currentDataElem.appendChild(dataDiv);
+}
 
+function init() {
+  addCurrentData();
   addPerWeekChart();
 }
 
