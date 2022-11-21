@@ -14,11 +14,9 @@ async function addPerWeekChart() {
       x: key,
       y: data[key]
     });
-
   }
 
   flippedData.reverse()
-  console.log(flippedData);
 
   const ctx = document.getElementById('per-week-chart');
 
@@ -26,7 +24,6 @@ async function addPerWeekChart() {
   new Chart(ctx, {
     type: 'bar',
     data: {
-      // labels: Object.keys(data),
       datasets: [{
         label: 'average temps',
         data: flippedData,
