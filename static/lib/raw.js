@@ -10,10 +10,13 @@ async function addPerWeekChart() {
   const flippedData = [];
 
   for (const key in data){
+    const date = new Date(key);
     flippedData.push({
-      x: key,
+      x: date.toLocaleDateString(),
       y: data[key]
     });
+
+  }
 
   }
 
