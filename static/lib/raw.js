@@ -18,8 +18,6 @@ async function addPerWeekChart() {
 
   }
 
-  }
-
   flippedData.reverse()
   console.log(flippedData);
 
