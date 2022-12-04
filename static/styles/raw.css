@@ -70,11 +70,11 @@ section>h1 {
     margin-top: 1rem;
 }
 
-#per-week {
+.chart-section {
     padding: var(--per-week-padding);
 
 }
 
-#per-week-chart {
+.chart {
     margin-top: 2rem;
 }
