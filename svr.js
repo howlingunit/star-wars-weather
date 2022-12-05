@@ -15,4 +15,7 @@ app.get('/avg-temp', api.avgTemp);
 
 app.get('/week-avg', api.weekAvg);
 
+app.get('/months-avg', api.monthsAvg);
+
+
 app.listen(8080);
