@@ -4,16 +4,16 @@ import { DataElem } from './custom_elements/dataelem.js';
 function organiseWeek(data) {
   const flippedData = [];
 
-  for (const key in data){
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key in data) {
     const date = new Date(key);
     flippedData.push({
       x: date.toLocaleDateString(),
-      y: data[key]
+      y: data[key],
     });
-
   }
-  
-  flippedData.reverse()
+
+  flippedData.reverse();
   return flippedData;
 }
 
@@ -21,33 +21,33 @@ function organiseMonth(data) {
 // change data from {xx:yyyyyyyy} to [{month:yyyyyyyy}, {month:yyyyyy}]
 // doing this to organise and display
 
-const months = {
-  '01': 'January',
-  '02': 'Febuary',
-  '03': 'March',
-  '04': 'April',
-  '05': 'May',
-  '06': 'June',
-  '07': 'July',
-  '08': 'August',
-  '09': 'September',
-  '10': 'October',
-  '11': 'November',
-  '12': 'December',
-};
+  const months = {
+    '01': 'January',
+    '02': 'Febuary',
+    '03': 'March',
+    '04': 'April',
+    '05': 'May',
+    '06': 'June',
+    '07': 'July',
+    '08': 'August',
+    '09': 'September',
+    '10': 'October',
+    '11': 'November',
+    '12': 'December',
+  };
 
-const organisedData = [];
+  const organisedData = [];
 
-Object.keys(data).sort().forEach((month) => {
-  const dispMonth = months[month];
+  Object.keys(data).sort().forEach((month) => {
+    const dispMonth = months[month];
 
-  organisedData.push({
-    x: dispMonth,
-    y: data[month],
-  })
-});
+    organisedData.push({
+      x: dispMonth,
+      y: data[month],
+    });
+  });
 
-return organisedData
+  return organisedData;
 }
 
 async function addCharts() {
@@ -65,7 +65,7 @@ async function addCharts() {
   const ctxMonth = document.getElementById('per-month-chart');
 
   // eslint-disable-next-line no-new, no-undef
-  new Chart(ctxWeek, { //per week chart
+  new Chart(ctxWeek, { // per week chart
     type: 'bar',
     data: {
       datasets: [{
@@ -76,7 +76,7 @@ async function addCharts() {
   });
 
   // eslint-disable-next-line no-new, no-undef
-  new Chart(ctxMonth, { //per week chart
+  new Chart(ctxMonth, { // per week chart
     type: 'bar',
     data: {
       datasets: [{
@@ -87,7 +87,7 @@ async function addCharts() {
   });
 }
 
-async function addCurrentData(){
+async function addCurrentData() {
   let currentData = await fetch('/current-data'); // collect data
   currentData = await currentData.json();
 
@@ -98,11 +98,11 @@ async function addCurrentData(){
   const dataDiv = document.createElement('div');
 
   const dataTypes = {
-    temp : 'Temperature',
-    humid : 'Humidity',
-    press : 'Pressure',
+    temp: 'Temperature',
+    humid: 'Humidity',
+    press: 'Pressure',
   };
-  
+
   for (const i of Object.keys(dataTypes)) {
     const data = currentData[i];
 

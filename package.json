@@ -27,12 +27,9 @@
     "sqlite3": "^5.1.1"
   },
   "devDependencies": {
-    "eslint": "^8.27.0",
     "eslint-config-portsoc": "^1.0.1"
-    
   },
-  
-"eslintConfig": {
+  "eslintConfig": {
     "extends": "portsoc",
     "root": true,
     "env": {
