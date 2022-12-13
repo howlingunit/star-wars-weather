@@ -4,17 +4,21 @@
     --main-padding: 5rem 4rem 1rem 4rem;
     --main-margin: 1rem 2rem 0rem 2rem;
 
-    --per-week-padding: 0 20% 0 20%;
+    --graph-padding: 0 10% 0 10%;
+    --graph-grid-template-rows: 1;
+    --graph-grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     :root{
         --current-data-h1: 2.5rem;
 
         --main-padding: 2rem 0.5rem 1rem 0.5rem;
         --main-margin: 1rem 0.5rem 0rem 0.5rem;
 
-        --per-week-padding: 0;
+        --graph-padding: 0;
+        --graph-grid-template-rows: 1fr 1fr; 
+        --graph-grid-template-columns: 1; 
 
 
     }
@@ -55,7 +59,7 @@ section{
     width: 100%;
     margin-bottom: 4rem;
 }
-section>h1 {
+h1 {
     font-family: 'Odibee Sans', cursive;
     font-size: var(--current-data-h1);
 }
@@ -70,11 +74,20 @@ section>h1 {
     margin-top: 1rem;
 }
 
+.graphs {
+    display: grid;
+    grid-template-columns: var(--graph-grid-template-columns);
+    grid-template-rows: var(--graph-grid-template-rows);
+}
+.graphs>div {
+    margin-bottom: 2rem;
+}
+
 .chart-section {
-    padding: var(--per-week-padding);
+    padding: var(--graph-padding);
 
 }
 
 .chart {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
