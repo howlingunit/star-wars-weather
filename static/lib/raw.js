@@ -88,13 +88,17 @@ async function addCharts() {
 }
 
 async function addCurrentData() {
-  let currentData = await fetch('/current-data'); // collect data
-  currentData = await currentData.json();
+  const currentData = await (await fetch('/current-data')).json(); // collect data
+  const amtOfRows = await (await fetch('/amt-of-rows')).json();
+  const avgTemp = await (await fetch('/avg-temp')).json();
+
 
   const timeElem = document.querySelector('#current-data-time'); // put time on page
   timeElem.textContent = new Date(currentData.date / 1000000).toLocaleString();
 
   const currentDataElem = document.querySelector('#current-data'); // put data on page
+  const amtOfRowsElem = document.querySelector('#rows-collected');
+  const avgTempElem = document.querySelector('#avg-temp');
   const dataDiv = document.createElement('div');
 
   const dataTypes = {
@@ -112,7 +116,10 @@ async function addCurrentData() {
 
     dataDiv.appendChild(dataElem);
   }
-  currentDataElem.appendChild(dataDiv);
+
+  currentDataElem.appendChild(dataDiv); //add data to page
+  amtOfRowsElem.textContent = amtOfRows;
+  avgTempElem.textContent = avgTemp;
 }
 
 function init() {
