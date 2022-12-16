@@ -52,11 +52,12 @@ nav {
     cursor: pointer;
     margin: 0.6rem;
     z-index: 2;
+    position: fixed;
 }
 
 .navOptions {
     z-index: 1;
-    position: absolute;
+    position: fixed;
     top: 0;
 
     width: 100vw;

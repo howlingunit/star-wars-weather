@@ -11,7 +11,7 @@ def getinfo():
     c = conn.cursor()
 
     P = sense.get_pressure()
-    T = sense.get_temperature() - 10 
+    T = sense.get_temperature() - 10 # adjustment for accuracy 
     H = sense.get_humidity()
 
 
@@ -24,4 +24,4 @@ def getinfo():
 while True:
     getinfo()
     print('done')
-    time.sleep(1800)
+    time.sleep(1800) # 1800 seconds = 30 minutes
