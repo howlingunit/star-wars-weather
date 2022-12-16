@@ -24,7 +24,7 @@ This is a server client-based system with a backend SQLite database locally stor
 
 The client is a dynamic web page which is mostly client-side rendered, and it gets its data from the API. On the homepage, it just needs `\latest-temp` and then compares that data with a set of planets. The raw page has two main sections, current data and the graphs; the graphs use `/week-avg` and `/month-avg` all the calculations are done server-side; the client formats the data. Raw also gets `/current-data` `amt-of-rows` `avg-tmp` for the rest of the page.
 
-# Database
+## Database
 The database only contains one table, `data`:
 ```
 data{
