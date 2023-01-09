@@ -112,7 +112,6 @@ main {
     font-size: 3rem;
     font-family: 'Odibee Sans', cursive;
     text-align: center;
-    /* color: white; */
 }
 
 .time {
@@ -125,4 +124,14 @@ main {
     right: 0;
 
     margin: 0.5rem;
+}
+
+.light-theme {
+    color: #000;
+    fill: #000;
+}
+
+.dark-theme {
+    color: #fff;
+    fill: #fff;
 }
