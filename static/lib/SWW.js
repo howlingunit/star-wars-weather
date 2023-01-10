@@ -13,7 +13,7 @@ async function SWW() {
     warm: [
       {title: 'coruscant', img: 'coruscant.jpg', theme: 'dark'}, 
       {title: 'naboo', img: 'naboo.jpg', theme: 'light'}, 
-      {title: 'Forest Moon of Endor', img: 'endor.jpg', theme: 'light'}
+      {title: 'Forest Moon of Endor', img: 'endor.jpg', theme: 'dark'}
     ],
     hot: [
       {title: 'Dagobah', img: 'dagobah.jpg', theme: 'light'}, 
