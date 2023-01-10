@@ -12,6 +12,10 @@
     border: 0;
 }
 
+a {
+    color: black;
+}
+
 ::-webkit-scrollbar {
     display: none; 
 }
