@@ -18,7 +18,7 @@ function organiseWeek(data) {
 }
 
 function organiseMonth(data) {
-// change data from {xx:yyyyyyyy} to [{month:yyyyyyyy}, {month:yyyyyy}]
+// change data from {yyyy-xx:tttt} to [{month:tttt}, {month:tttt}]
 // doing this to organise and display
 
   const months = {
@@ -39,7 +39,8 @@ function organiseMonth(data) {
   const organisedData = [];
 
   Object.keys(data).sort().forEach((month) => {
-    const dispMonth = months[month];
+    const dispMonth = `${months[month.slice(5)]} ${month.slice(0, 4)}`;
+
 
     organisedData.push({
       x: dispMonth,
